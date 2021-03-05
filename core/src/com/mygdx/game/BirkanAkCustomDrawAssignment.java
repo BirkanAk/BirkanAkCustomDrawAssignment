@@ -18,6 +18,8 @@ public class BirkanAkCustomDrawAssignment extends ApplicationAdapter {
 	Texture img2;
 	float y2;
 	float x2;
+	int img2_speed_X = 6;
+	int img2_speed_Y = 6;
 
 	@Override
 	public void create () {
@@ -40,6 +42,7 @@ public class BirkanAkCustomDrawAssignment extends ApplicationAdapter {
 
 
 		tick1();
+		tick2();
 
 		batch.begin();
 		batch2.begin();
@@ -72,6 +75,31 @@ public class BirkanAkCustomDrawAssignment extends ApplicationAdapter {
 		}
 		else{
 			y += img_speed_Y;
+		}
+	}
+	public void tick2(){
+		if (x2 > Gdx.graphics.getWidth() - img2.getWidth()/2) {
+			img2_speed_X = -img2_speed_X;
+			x2 += img2_speed_X;
+		}
+		else if(x2 < img2.getWidth()/2){
+			img2_speed_X = -img2_speed_X;
+			x2 += img2_speed_X;
+		}
+		else{
+			x2 += img2_speed_X;
+		}
+
+		if (y2 > Gdx.graphics.getHeight() - img2.getHeight()/2) {
+			img2_speed_Y = -img2_speed_Y;
+			y2 += img2_speed_Y;
+		}
+		else if(y2 < img2.getHeight()/2){
+			img2_speed_Y = -img2_speed_Y;
+			y2 += img2_speed_Y;
+		}
+		else{
+			y2 += img2_speed_Y;
 		}
 
 	}
