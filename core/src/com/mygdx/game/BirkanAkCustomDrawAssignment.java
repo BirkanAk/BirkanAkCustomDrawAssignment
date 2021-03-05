@@ -9,11 +9,17 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 public class BirkanAkCustomDrawAssignment extends ApplicationAdapter {
 	SpriteBatch batch;
 	Texture img;
-	
+
+	float y;
+	float x;
+
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		img = new Texture("badlogic.jpg");
+		img = new Texture("Please_give_me_an_a.png");
+
+		x = Gdx.graphics.getWidth()/2;
+		y = Gdx.graphics.getHeight()/2;
 	}
 
 	@Override
@@ -21,7 +27,7 @@ public class BirkanAkCustomDrawAssignment extends ApplicationAdapter {
 		Gdx.gl.glClearColor(1, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		batch.begin();
-		batch.draw(img, 0, 0);
+		batch.draw(img, x - img.getWidth()/2, y - img.getHeight()/2);
 		batch.end();
 	}
 	
