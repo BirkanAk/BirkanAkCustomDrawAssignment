@@ -14,13 +14,23 @@ public class BirkanAkCustomDrawAssignment extends ApplicationAdapter {
 	int img_speed_X = 3;
 	int img_speed_Y = 3;
 
+	SpriteBatch batch2;
+	Texture img2;
+	float y2;
+	float x2;
+
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
 		img = new Texture("Please_give_me_an_a.png");
+		batch2 = new SpriteBatch();
+		img2=new Texture("birkan_ak.png");
 
 		x = Gdx.graphics.getWidth()/2;
 		y = Gdx.graphics.getHeight()/2;
+
+		x2 = Gdx.graphics.getWidth()/2;
+		y2 = Gdx.graphics.getHeight()/2;
 	}
 
 	@Override
@@ -32,8 +42,11 @@ public class BirkanAkCustomDrawAssignment extends ApplicationAdapter {
 		tick1();
 
 		batch.begin();
+		batch2.begin();
 		batch.draw(img, x - img.getWidth()/2, y - img.getHeight()/2);
+		batch2.draw(img2, x2 - img2.getWidth()/2, y2 - img2.getHeight()/2);
 		batch.end();
+		batch2.end();
 	}
 
 	public void tick1(){
